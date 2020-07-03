@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
-        title: Text("Home Page"),
+        title: Text("Feed"),
       ),
       body: ListView.builder(
           itemCount: 5,
