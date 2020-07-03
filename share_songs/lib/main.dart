@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:share_songs/post.dart';
 
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
-
 void main() {
   runApp(MaterialApp(
     home: HomePage(),
@@ -16,16 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  AudioCache player = AudioCache();
-
   @override
   initState() {
     super.initState();
-    playMusic();
-  }
-
-  void playMusic() async {
-    player.play('song.mp3');
   }
 
   @override
