@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:share_songs/post.dart';
+
 class Feed extends StatefulWidget {
   @override
   _FeedState createState() => _FeedState();
@@ -21,7 +22,7 @@ class _FeedState extends State<Feed> {
       body: ListView.builder(
           itemCount: 5,
           itemBuilder: (context, index) {
-            return Post();
+            return PostWidget();
           }),
       backgroundColor: Colors.black,
     );

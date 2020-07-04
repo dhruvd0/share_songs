@@ -24,7 +24,7 @@ class _SignInState extends State<SignIn> {
                 if (user == null) {
                   print("Error");
                 } else {
-                  print(user);
+                  print(user.uid);
                 }
               },
               child: Text("Sign in")),

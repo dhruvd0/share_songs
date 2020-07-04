@@ -9,7 +9,9 @@ void main() {
     initialRoute: "/",
     routes: {
       "/": (context) {
-        return SignIn();
+        return StartWidget(
+          start: Feed(),
+        );
       },
       "/feed": (context) {
         return Feed();
@@ -19,4 +21,13 @@ void main() {
       },
     },
   ));
+}
+
+class StartWidget extends StatelessWidget {
+  Widget start;
+  StartWidget({this.start});
+  @override
+  Widget build(BuildContext context) {
+    return start;
+  }
 }

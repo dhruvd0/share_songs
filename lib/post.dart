@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 // import 'package:audioplayers/audio_cache.dart';
 // import 'package:audioplayers/audioplayers.dart';
 
-class Post extends StatefulWidget {
+class PostWidget extends StatefulWidget {
   @override
-  _PostState createState() => _PostState();
+  _PostWidgetState createState() => _PostWidgetState();
 }
 
-class _PostState extends State<Post> {
+class _PostWidgetState extends State<PostWidget> {
   String artLink =
       "https://images.unsplash.com/photo-1458560871784-56d23406c091?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80";
-  String audioName, userName, postText;
+  String audioName, userName, PostWidgetText;
   @override
   initState() {
     super.initState();
     audioName = "Numb";
     userName = "linkinpark";
-    postText = '''I'm tired of being what you want me to be
+    PostWidgetText = '''I'm tired of being what you want me to be
 Feeling so faithless, lost under the surface
 I don't know what you're expecting of me
 Put under the pressure of walking in your shoes
@@ -56,7 +56,7 @@ Caught in the undertow, just caught in the undertow''';
   @override
   Widget build(BuildContext context) {
     return Container(
-      //post container
+      //PostWidget container
       margin: EdgeInsets.all(5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +152,7 @@ Caught in the undertow, just caught in the undertow''';
                 Container(
                   margin: EdgeInsets.all(5),
                   child: Text(
-                    '''$postText''',
+                    '''$PostWidgetText''',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
