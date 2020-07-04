@@ -1,36 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:share_songs/authenticate/auth.dart';
+import 'package:share_songs/authenticate/signIn.dart';
 import 'package:share_songs/post.dart';
+import 'package:share_songs/feed.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomePage(),
+    initialRoute: "/",
+    routes: {
+      "/": (context) {
+        return SignIn();
+      },
+      "/feed": (context) {
+        return Feed();
+      },
+      "/signIn": (context) {
+        return SignIn();
+      },
+    },
   ));
-}
-
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[900],
-        title: Text("Feed"),
-      ),
-      body: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return Post();
-          }),
-      backgroundColor: Colors.black,
-    );
-  }
 }

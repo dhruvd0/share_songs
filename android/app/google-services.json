@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "944176507814",
+    "firebase_url": "https://share-songs-d7b4b.firebaseio.com",
+    "project_id": "share-songs-d7b4b",
+    "storage_bucket": "share-songs-d7b4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944176507814:android:9a7c37fa951b18a7033d67",
+        "android_client_info": {
+          "package_name": "com.example.share_songs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944176507814-ks8o2h13u9v5ncu86gpu3a6aoi97ppku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Kp9-n0_PiYUTrxCfPhLMUSGSD_e9uQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944176507814-ks8o2h13u9v5ncu86gpu3a6aoi97ppku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audio_cache.dart';
+// import 'package:audioplayers/audioplayers.dart';
 
 class Post extends StatefulWidget {
   @override
@@ -30,6 +30,7 @@ Caught in the undertow, just caught in the undertow''';
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         FloatingActionButton(
+          onPressed: (){},
           mini: true,
           backgroundColor: Colors.grey[850],
           child: Icon(
@@ -43,6 +44,7 @@ Caught in the undertow, just caught in the undertow''';
           onPressed: () {},
         ),
         FloatingActionButton(
+          onPressed: (){},
           mini: true,
           backgroundColor: Colors.grey[850],
           child: Icon(Icons.forward_10),
@@ -126,6 +128,7 @@ Caught in the undertow, just caught in the undertow''';
                   width: 10,
                 ),
                 FloatingActionButton(
+                  onPressed: (){},
                     mini: true,
                     backgroundColor: Colors.black,
                     child: Icon(
