@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 // import 'package:audioplayers/audioplayers.dart';
 
 class PostWidget extends StatefulWidget {
+ 
+ 
   @override
   _PostWidgetState createState() => _PostWidgetState();
 }
 
 class _PostWidgetState extends State<PostWidget> {
+
+  
   String artLink =
       "https://images.unsplash.com/photo-1458560871784-56d23406c091?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80";
   String audioName, userName, PostWidgetText;
@@ -128,7 +132,8 @@ Caught in the undertow, just caught in the undertow''';
                   width: 10,
                 ),
                 FloatingActionButton(
-                  onPressed: (){},
+                  heroTag: "one",
+                    onPressed: () {},
                     mini: true,
                     backgroundColor: Colors.black,
                     child: Icon(
