@@ -43,8 +43,6 @@ class _SignInState extends State<SignIn> {
             RaisedButton(
                 onPressed: () async {
                   FirebaseUser user = await auth.signInAnon(email);
-
-                
                 },
                 child: Text("Sign in")),
           ],
