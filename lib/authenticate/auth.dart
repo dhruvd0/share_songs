@@ -22,15 +22,12 @@ class Auth {
     } catch (e) {}
   }
 
-  Future signInAnon(String email) async {
+  Future signInAnon() async {
     //sign in anonymously
     try {
       AuthResult authResult = await firebaseAuth.signInAnonymously();
       FirebaseUser user = authResult.user;
-      if(email==null){
-        email="null email";
-      }
-      await user.updateEmail(email);
+
       return user;
     } catch (e) {
       return null;
