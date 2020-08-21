@@ -8,7 +8,7 @@ import 'package:share_songs/feed.dart';
 import 'package:share_songs/posts/post.dart';
 import 'package:share_songs/posts/uploadPost.dart';
 // import 'package:share_songs/posts/post.dart';
-// import 'package:share_songs/feed.dart';
+
 // import 'package:share_songs/user.dart';
 
 void main() {
@@ -18,6 +18,9 @@ void main() {
       routes: {
         "/upload": (context) {
           return uploadPostWidget();
+        },
+        "/feed":(context){
+          return Feed();
         }
       },
     ),

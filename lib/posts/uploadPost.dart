@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 // import 'package:audioplayers/audio_cache.dart';
-
+import 'package:toast/toast.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:share_songs/posts/PostService.dart';
@@ -88,14 +88,16 @@ class _uploadPostWidgetState extends State<uploadPostWidget> {
               "Submit",
               style: TextStyle(color: Colors.white),
             ),
-            onPressed: () {
+            onPressed: () async {
               if (postName == "null" || postText == "null") {
                 setState(() {
                   hintStyle = TextStyle(color: Colors.red, fontSize: 10);
                 });
               } else {
-                postService.uploadPost(
+                await postService.uploadPost(
                     "XYZ", postName, postText, songArtFile, audioFile);
+                 await Toast.show(postName+" Uploaded !", context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM);
+                 Navigator.popAndPushNamed(context, "/feed");
               }
             },
           )

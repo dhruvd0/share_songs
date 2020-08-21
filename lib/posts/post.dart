@@ -9,8 +9,14 @@ class Post {
   String songArtLink;
   String userName, postText, audioName;
   String uid;
-  String audioLength;//in minutes
-  Post({this.postText, this.userName, this.songArtLink, this.audioName});
+  String audioLength; //in minutesr
+  String audioLink;
+  Post(
+      {this.postText,
+      this.userName,
+      this.songArtLink,
+      this.audioName,
+      this.audioLink});
 }
 
 class PostWidget extends StatefulWidget {
@@ -24,7 +30,8 @@ class _PostWidgetState extends State<PostWidget> {
   Post post = Post(
       postText: "Post text",
       songArtLink: "assets/testImage.jpg",
-      userName: "linkinpark",audioName: "Numb");
+      userName: "linkinpark",
+      audioName: "Numb");
 
   Icon play_pauseIcon = Icon(Icons.play_arrow);
   @override

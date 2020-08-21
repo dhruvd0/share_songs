@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 // import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:share_songs/posts/post.dart';
 
 class PostService {
   //push and pull post data
@@ -20,10 +21,12 @@ class PostService {
 
   void uploadPost(String uid, String postName, String postText, File image,
       File audio) async {
-    CollectionReference users = Firestore.instance.collection("users");//users collection
-    DocumentReference user = users.document(uid);//uid doc ref
-    CollectionReference post = user.collection("Posts");//posts collection of uid user
-    DocumentReference doc = post.document();//auto id genereted doc of post
+    CollectionReference users =
+        Firestore.instance.collection("users"); //users collection
+    DocumentReference user = users.document(uid); //uid doc ref
+    CollectionReference post =
+        user.collection("Posts"); //posts collection of uid user
+    DocumentReference doc = post.document(); //auto id genereted doc of post
 
     doc.setData({
       postName: {
@@ -31,15 +34,23 @@ class PostService {
         "postText": postText,
       }
     });
-    String postId=doc.documentID;
+    String postId = doc.documentID;
     StorageReference imageRef = FirebaseStorage.instance
         .ref()
         .child(uid + "/Posts/" + postId + "/image.jpg");
     StorageReference audioRef = FirebaseStorage.instance
         .ref()
-        .child(uid + "/Posts/" + postId + "/audio.jpg");
-
+        .child(uid + "/Posts/" + postId + "/audio.mp3");
+    String imageLink = await imageRef.getDownloadURL();
+    String audioLink = await imageRef.getDownloadURL();
+    doc.updateData({
+      postName: {
+        "imageLink": imageLink,
+        "audioLink": audioLink,
+      },
+    });
     imageRef.putFile(image);
+
     audioRef.putFile(audio);
   }
 
@@ -50,6 +61,16 @@ class PostService {
   void playAudio() async {
     audioPlayer.play(
         "https://firebasestorage.googleapis.com/v0/b/share-songs-d7b4b.appspot.com/o/file?alt=media&token=246dce90-bebc-4904-855d-e8a8bc3c691c");
+  }
+
+  Stream<QuerySnapshot> posts(String uid) {
+    CollectionReference users =
+        Firestore.instance.collection("users"); //users collection
+    DocumentReference user = users.document(uid); //uid doc ref
+    CollectionReference posts =
+        user.collection("Posts"); //posts collection of uid user
+
+    return posts.snapshots();
   }
 
   void downloadPost() async {}
